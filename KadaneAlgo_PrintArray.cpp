@@ -21,15 +21,10 @@ int maxSubArray(int arr[], int size)
 	    MaxTillHere += arr[i];
 		
 	
-		if(IsNMinusOneZer0 && MaxTillHere > 0 )
-		{
-		   TempBeginIndex = i;
-		   IsNMinusOneZer0 =false;
-		}
-		else if(MaxTillHere < 0)
+	    if(MaxTillHere < 0)
 		{
 			MaxTillHere = 0; //Set 0 if value is lower than 0
-			IsNMinusOneZer0 = true;
+			TempBeginIndex = i + 1;
 		}
 	
 	
