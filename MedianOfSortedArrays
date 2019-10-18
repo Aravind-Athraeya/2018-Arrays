@@ -1,0 +1,58 @@
+
+#include "stdafx.h"
+#include <set>
+#include <iostream>
+#include<conio.h>
+#include <sstream>
+#include<stdio.h> 
+#include<stdlib.h>
+#include <queue>
+#include <unordered_set>
+
+using namespace std;
+
+
+// Rod cutting
+// Intuition is - Firstsolve manually in paper for 3-4 cases. Figure out the pattern for memoization
+
+
+
+#define size 4
+#define size2 6
+
+int GetMin(int a, int b)
+{
+	if (a > b)
+		return b;
+	else
+		return a;
+}
+
+
+int MedianArray(int p[], int q[])
+{
+	int arr[size + size2];
+	int xCounter = 0;
+	int yCounter = 0;
+	for (int i = 0; i < size + size2; i++)
+	{
+		int now = p[xCounter] < q[yCounter] ? p[xCounter++] : q[yCounter++];
+		arr[i] = now;
+	}
+
+	return 0;
+}
+
+
+
+
+int main()
+{
+	int arr[] = { 2, 3, 5, 8 };
+
+	int arr2[] = { 10, 12, 14, 16, 18, 20 };
+	cout << "Maximum value from rod cutting is " << MedianArray(arr, arr2);
+
+	return 0;
+
+}
