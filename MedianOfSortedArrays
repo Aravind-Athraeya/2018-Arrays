@@ -11,9 +11,8 @@
 
 using namespace std;
 
-
-// Rod cutting
-// Intuition is - Firstsolve manually in paper for 3-4 cases. Figure out the pattern for memoization
+// Brute force is easy
+// Optimal one with Log time
 
 
 
