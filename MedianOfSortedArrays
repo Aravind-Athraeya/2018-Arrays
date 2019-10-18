@@ -19,6 +19,8 @@ using namespace std;
 
 #define size 4
 #define size2 6
+#define nega 5555555
+
 
 int GetMin(int a, int b)
 {
@@ -28,19 +30,31 @@ int GetMin(int a, int b)
 		return a;
 }
 
-
+// O(size + size2)
+// Brute Force
 int MedianArray(int p[], int q[])
 {
 	int arr[size + size2];
 	int xCounter = 0;
 	int yCounter = 0;
+	p[size + 1] = nega; //identifier to block the index jump in arrays
+	q[size2 + 1] = nega; //identifier to block the index jump in arrays
+
+
 	for (int i = 0; i < size + size2; i++)
 	{
-		int now = p[xCounter] < q[yCounter] ? p[xCounter++] : q[yCounter++];
-		arr[i] = now;
+		arr[i] = p[xCounter] < q[yCounter] ? p[xCounter++] : q[yCounter++];
+
 	}
 
-	return 0;
+	// Return Median
+	if ((size + size2) % 2 == 0)
+	{
+		int m1 = (size + size2) / 2;
+		return (arr[m1] + arr[m1 + 1]) / 2;
+}
+	else
+      return  arr[((size + size2) + 1) / 2];
 }
 
 
@@ -51,7 +65,7 @@ int main()
 	int arr[] = { 2, 3, 5, 8 };
 
 	int arr2[] = { 10, 12, 14, 16, 18, 20 };
-	cout << "Maximum value from rod cutting is " << MedianArray(arr, arr2);
+	cout << "Median element is " << MedianArray(arr, arr2);
 
 	return 0;
 
