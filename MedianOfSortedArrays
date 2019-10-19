@@ -31,6 +31,11 @@ int GetMin(int a, int b)
 
 // O(size + size2)
 // Brute Force
+// optimal solution - Just read through
+/
+//https://www.youtube.com/watch?v=LPFhl65R7ww
+//https://www.geeksforgeeks.org/median-two-sorted-arrays-different-sizes-ologminn-m/
+
 int MedianArray(int p[], int q[])
 {
 	int arr[size + size2];
